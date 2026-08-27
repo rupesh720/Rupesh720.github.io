@@ -110,6 +110,47 @@ function closeImage(event) {
 </script>
 
 <style>
+<section id="gallery">
+  <h2 class="heading">My <span>Gallery</span></h2>
+
+  <div class="gallery-grid">
+
+    <img src="photo_2026-08-27_21-28-58.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-54.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-52.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-51.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-50.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-48.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-46.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-45.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-42.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-40.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-35.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+
+  </div>
+</section>
+
+<!-- Full Screen Image Popup -->
+<div id="imagePopup" onclick="closeImage()">
+  <button class="close-btn" onclick="closeImage(event)">×</button>
+  <img id="popupImage" src="" alt="Rupesh Dubey">
+</div>
+
+<script>
+function openImage(src) {
+  document.getElementById("popupImage").src = src;
+  document.getElementById("imagePopup").style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+function closeImage(event) {
+  if (event) event.stopPropagation();
+  document.getElementById("imagePopup").style.display = "none";
+  document.body.style.overflow = "";
+}
+</script>
+
+<style>
 .gallery-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -164,23 +205,10 @@ function closeImage(event) {
   z-index:10000;
 }
 </style>
+</style>
   <h2 class="heading">My <span>Gallery</span></h2>
 
-  <div class="gallery-grid">
-
-    <img src="photo_2026-08-27_21-28-58.jpg" alt="Rupesh Dubey">
-    <img src="photo_2026-08-27_21-28-54.jpg" alt="Rupesh Dubey">
-    <img src="photo_2026-08-27_21-28-52.jpg" alt="Rupesh Dubey">
-    <img src="photo_2026-08-27_21-28-51.jpg" alt="Rupesh Dubey">
-    <img src="photo_2026-08-27_21-28-50.jpg" alt="Rupesh Dubey">
-    <img src="photo_2026-08-27_21-28-48.jpg" alt="Rupesh Dubey">
-    <img src="photo_2026-08-27_21-28-46.jpg" alt="Rupesh Dubey">
-    <img src="photo_2026-08-27_21-28-45.jpg" alt="Rupesh Dubey">
-    <img src="photo_2026-08-27_21-28-42.jpg" alt="Rupesh Dubey">
-    <img src="photo_2026-08-27_21-28-40.jpg" alt="Rupesh Dubey">
-    <img src="photo_2026-08-27_21-28-35.jpg" alt="Rupesh Dubey">
-
-  </div>
+ </div>
 </section>
 
 <section id="skills">
