@@ -27,6 +27,51 @@ footer{text-align:center;padding:35px 20px;border-top:1px solid var(--line);colo
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:18px;
+}<section id="gallery">
+  <h2 class="heading">My <span>Gallery</span></h2>
+
+  <div class="gallery-grid">
+
+    <img src="photo_2026-08-27_21-28-58.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-54.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-52.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-51.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-50.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-48.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-46.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-45.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-42.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-40.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+    <img src="photo_2026-08-27_21-28-35.jpg" alt="Rupesh Dubey" onclick="openImage(this.src)">
+
+  </div>
+</section>
+
+<!-- Full Screen Image Popup -->
+<div id="imagePopup" onclick="closeImage()">
+  <button class="close-btn" onclick="closeImage(event)">×</button>
+  <img id="popupImage" src="" alt="Rupesh Dubey">
+</div>
+
+<script>
+function openImage(src) {
+  document.getElementById("popupImage").src = src;
+  document.getElementById("imagePopup").style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+
+function closeImage(event) {
+  if (event) event.stopPropagation();
+  document.getElementById("imagePopup").style.display = "none";
+  document.body.style.overflow = "";
+}
+</script>
+
+<style>
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
 }
 
 .gallery-grid img{
@@ -35,21 +80,50 @@ footer{text-align:center;padding:35px 20px;border-top:1px solid var(--line);colo
   object-fit:cover;
   border-radius:15px;
   border:1px solid var(--line);
+  cursor:pointer;
   transition:transform .3s;
 }
 
 .gallery-grid img:hover{
   transform:scale(1.03);
-}</style>.profile-photo{
-  width:180px;
-  height:180px;
-  object-fit:cover;
-  border-radius:50%;
-  border:4px solid var(--accent);
-  margin-bottom:25px;
-  box-shadow:0 0 35px rgba(56,189,248,.25);
 }
-</head>
+
+#imagePopup{
+  display:none;
+  position:fixed;
+  z-index:9999;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  align-items:center;
+  justify-content:center;
+  padding:25px;
+}
+
+#popupImage{
+  max-width:95%;
+  max-height:90vh;
+  object-fit:contain;
+  border-radius:10px;
+}
+
+.close-btn{
+  position:absolute;
+  top:20px;
+  right:25px;
+  width:45px;
+  height:45px;
+  border:0;
+  border-radius:50%;
+  background:#fff;
+  color:#111;
+  font-size:32px;
+  line-height:40px;
+  cursor:pointer;
+  z-index:10000;
+}
+</style>
+
+ </head>
 <body>
 <nav><div class="logo">Rupesh_Dubey.</div><div class="links">
 <a href="#about">About</a>
