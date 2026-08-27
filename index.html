@@ -23,7 +23,24 @@ section{max-width:1180px;margin:auto;padding:88px 7%}.heading{font-size:36px;let
 .tags{display:flex;flex-wrap:wrap;gap:9px}.tag{padding:8px 12px;border-radius:9px;background:#14263c;border:1px solid #29435e;color:#d9e9f7}
 footer{text-align:center;padding:35px 20px;border-top:1px solid var(--line);color:#8294a8}
 @media(max-width:700px){.links{display:none}h1{letter-spacing:-2px}.hero{padding-top:125px}section{padding:70px 6%}}
-</style>.profile-photo{
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+
+.gallery-grid img{
+  width:100%;
+  height:280px;
+  object-fit:cover;
+  border-radius:15px;
+  border:1px solid var(--line);
+  transition:transform .3s;
+}
+
+.gallery-grid img:hover{
+  transform:scale(1.03);
+}</style>.profile-photo{
   width:180px;
   height:180px;
   object-fit:cover;
@@ -34,8 +51,13 @@ footer{text-align:center;padding:35px 20px;border-top:1px solid var(--line);colo
 }
 </head>
 <body>
-<nav><div class="logo">RD.</div><div class="links">
-<a href="#about">About</a><a href="#career">Career</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#contact">Contact</a>
+<nav><div class="logo">Rupesh_Dubey.</div><div class="links">
+<a href="#about">About</a>
+<a href="#career">Career</a>
+<a href="#gallery">Gallery</a>
+<a href="#skills">Skills</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
 </div></nav>
 
 <header class="hero">
@@ -62,6 +84,24 @@ footer{text-align:center;padding:35px 20px;border-top:1px solid var(--line);colo
 <div class="item"><h3>Micron Semiconductor — Manufacturing Associate</h3><small>Current role</small><p class="muted">Experience and training around semiconductor manufacturing, including Wafer Saw, Die Attach and Wire Bonding processes.</p></div>
 <div class="item"><h3>Tata EV — Manufacturing Associate</h3><small>2024–2025</small><p class="muted">Worked in BIW-VQA with part inspection, supplier coordination and support for smooth production-line operations.</p></div>
 </div>
+</section><section id="gallery">
+  <h2 class="heading">My <span>Gallery</span></h2>
+
+  <div class="gallery-grid">
+
+    <img src="photo_2026-08-27_21-28-58.jpg" alt="Rupesh Dubey">
+    <img src="photo_2026-08-27_21-28-54.jpg" alt="Rupesh Dubey">
+    <img src="photo_2026-08-27_21-28-52.jpg" alt="Rupesh Dubey">
+    <img src="photo_2026-08-27_21-28-51.jpg" alt="Rupesh Dubey">
+    <img src="photo_2026-08-27_21-28-50.jpg" alt="Rupesh Dubey">
+    <img src="photo_2026-08-27_21-28-48.jpg" alt="Rupesh Dubey">
+    <img src="photo_2026-08-27_21-28-46.jpg" alt="Rupesh Dubey">
+    <img src="photo_2026-08-27_21-28-45.jpg" alt="Rupesh Dubey">
+    <img src="photo_2026-08-27_21-28-42.jpg" alt="Rupesh Dubey">
+    <img src="photo_2026-08-27_21-28-40.jpg" alt="Rupesh Dubey">
+    <img src="photo_2026-08-27_21-28-35.jpg" alt="Rupesh Dubey">
+
+  </div>
 </section>
 
 <section id="skills">
@@ -80,9 +120,11 @@ footer{text-align:center;padding:35px 20px;border-top:1px solid var(--line);colo
 <h2 class="heading">Let's <span>Connect</span></h2>
 <div class="card">
 <p class="muted">For professional opportunities, collaboration or technical discussions, you can connect with me here.</p>
-<div class="actions">
+  <a class="btn" href="https://www.instagram.com/rupesh_dubey.72" target="_blank">📷 Instagram</a>
+  <a class="btn primary" href="https://youtube.com/@dubeyblogs72" target="_blank">▶️ YouTube</a>
+</div>
 <a class="btn primary" href="mailto:YOUR_EMAIL@example.com">Email Me</a>
-<a class="btn ghost" href="YOUR_LINKEDIN_URL">LinkedIn</a>
+<a class="btn ghost" href="https://www.linkedin.com/in/rupesh-dubey-776859264/" target="_blank">💼 LinkedIn</a>
 </div>
 </div>
 </section>
