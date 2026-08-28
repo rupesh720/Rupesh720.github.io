@@ -274,31 +274,6 @@ function closeImage(event) {
 <div class="item"><h3>Micron Semiconductor — Manufacturing Associate</h3><small>Current role</small><p class="muted">Experience and training around semiconductor manufacturing, including Wafer Saw, Die Attach and Wire Bonding processes.</p></div>
 <div class="item"><h3>Tata EV — Manufacturing Associate</h3><small>2024–2025</small><p class="muted">Worked in BIW-VQA with part inspection, supplier coordination and support for smooth production-line operations.</p></div>
 </div>
-<section id="gallery">
-  <h2 class="heading">My <span>Gallery</span></h2>
-  </div>
-</section>
-
-<!-- Full Screen Image Popup -->
-<div id="imagePopup" onclick="closeImage()">
-  <button class="close-btn" onclick="closeImage(event)">×</button>
-  <img id="popupImage" src="" alt="Rupesh Dubey">
-</div>
-
-<script>
-function openImage(src) {
-  document.getElementById("popupImage").src = src;
-  document.getElementById("imagePopup").style.display = "flex";
-  document.body.style.overflow = "hidden";
-}
-
-function closeImage(event) {
-  if (event) event.stopPropagation();
-  document.getElementById("imagePopup").style.display = "none";
-  document.body.style.overflow = "";
-}
-</script>
-
 <style>
 <se
 
@@ -321,33 +296,7 @@ function closeImage(event) {
   document.getElementById("imagePopup").style.display = "none";
   document.body.style.overflow = "";
 }
-</script>
 
-<style>
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:18px;
-}
-
-.gallery-grid img{
-  width:100%;
-  height:280px;
-  object-fit:cover;
-  border-radius:15px;
-  border:1px solid var(--line);
-  cursor:pointer;
-  transition:transform .3s;
-}
-
-.gallery-grid img:hover{
-  transform:scale(1.03);
-}
-
-#imagePopup{
-  display:none;
-  position:fixed;
-  z-index:9999;
   inset:0;
   background:rgba(0,0,0,.92);
   align-items:center;
