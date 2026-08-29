@@ -274,64 +274,6 @@ function closeImage(event) {
 <div class="item"><h3>Micron Semiconductor — Manufacturing Associate</h3><small>Current role</small><p class="muted">Experience and training around semiconductor manufacturing, including Wafer Saw, Die Attach and Wire Bonding processes.</p></div>
 <div class="item"><h3>Tata EV — Manufacturing Associate</h3><small>2024–2025</small><p class="muted">Worked in BIW-VQA with part inspection, supplier coordination and support for smooth production-line operations.</p></div>
 </div>
-<style>
-<se
-
-
-<!-- Full Screen Image Popup -->
-<div id="imagePopup" onclick="closeImage()">
-  <button class="close-btn" onclick="closeImage(event)">×</button>
-  <img id="popupImage" src="" alt="Rupesh Dubey">
-</div>
-
-<script>
-function openImage(src) {
-  document.getElementById("popupImage").src = src;
-  document.getElementById("imagePopup").style.display = "flex";
-  document.body.style.overflow = "hidden";
-}
-
-function closeImage(event) {
-  if (event) event.stopPropagation();
-  document.getElementById("imagePopup").style.display = "none";
-  document.body.style.overflow = "";
-}
-
-  inset:0;
-  background:rgba(0,0,0,.92);
-  align-items:center;
-  justify-content:center;
-  padding:25px;
-}
-
-#popupImage{
-  max-width:95%;
-  max-height:90vh;
-  object-fit:contain;
-  border-radius:10px;
-}
-
-.close-btn{
-  position:absolute;
-  top:20px;
-  right:25px;
-  width:45px;
-  height:45px;
-  border:0;
-  border-radius:50%;
-  background:#fff;
-  color:#111;
-  font-size:32px;
-  line-height:40px;
-  cursor:pointer;
-  z-index:10000;
-}
-</style>
-</style>
-  <h2 class="heading">My <span>Gallery</span></h2>
-
- </div>
-</section>
 
 <section id="skills">
 <h2 class="heading">Technical <span>Skills</span></h2>
