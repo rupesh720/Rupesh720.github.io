@@ -83,85 +83,6 @@ footer{text-align:center;padding:35px 20px;border-top:1px solid var(--line);colo
 
   <div class="gallery-grid">
 
-    <img class="gallery-item"
-         src="photo_2026-08-27_21-28-35.jpg"
-         alt="Rupesh Dubey">
-
-    <img class="gallery-item"
-         src="photo_2026-08-27_21-28-40.jpg"
-         alt="Rupesh Dubey">
-
-    <img class="gallery-item"
-         src="photo_2026-08-27_21-28-42.jpg"
-         alt="Rupesh Dubey">
-
-    <img class="gallery-item"
-         src="photo_2026-08-27_21-28-45.jpg"
-         alt="Rupesh Dubey">
-
-    <img class="gallery-item"
-         src="photo_2026-08-27_21-28-46.jpg"
-         alt="Rupesh Dubey">
-
-    <img class="gallery-item"
-         src="photo_2026-08-27_21-28-48.jpg"
-         alt="Rupesh Dubey">
-
-    <img class="gallery-item"
-         src="photo_2026-08-27_21-28-50.jpg"
-         alt="Rupesh Dubey">
-
-    <img class="gallery-item"
-         src="photo_2026-08-27_21-28-51.jpg"
-         alt="Rupesh Dubey">
-
-    <img class="gallery-item"
-         src="photo_2026-08-27_21-28-52.jpg"
-         alt="Rupesh Dubey">
-
-    <img class="gallery-item"
-         src="photo_2026-08-27_21-28-54.jpg"
-         alt="Rupesh Dubey">
-
-    <img class="gallery-item"
-         src="photo_2026-08-27_21-28-58.jpg"
-         alt="Rupesh Dubey">
-
-  </div>
-
-  <!-- Full Screen Photo Viewer -->
-  <div id="photoViewer">
-    <span id="closePhoto">&times;</span>
-    <img id="fullPhoto" src="" alt="Rupesh Dubey">
-  </div>
-
-  <script>
-    const galleryImages = document.querySelectorAll("#gallery .gallery-item");
-    const photoViewer = document.getElementById("photoViewer");
-    const fullPhoto = document.getElementById("fullPhoto");
-    const closePhoto = document.getElementById("closePhoto");
-
-    galleryImages.forEach(function(image) {
-      image.addEventListener("click", function() {
-        fullPhoto.src = image.src;
-        photoViewer.style.display = "flex";
-      });
-    });
-
-    closePhoto.addEventListener("click", function() {
-      photoViewer.style.display = "none";
-      fullPhoto.src = "";
-    });
-
-    photoViewer.addEventListener("click", function(e) {
-      if (e.target === photoViewer) {
-        photoViewer.style.display = "none";
-        fullPhoto.src = "";
-      }
-    });
-  </script>
-
-</section>
 
 <!-- Full Screen Image Popup -->
 <div id="imagePopup" onclick="closeImage()">
@@ -287,6 +208,101 @@ function closeImage(event) {
 <div class="grid"><div class="card"><h3>Diploma in Electrical Engineering</h3><p class="muted">Government Polytechnic, Gonda</p><p class="muted">2024 • 70%</p></div></div>
 </section>
 
+    <img class="gallery-item"
+         src="photo_2026-08-27_21-28-35.jpg"
+         alt="Rupesh Dubey">
+
+    <img class="gallery-item"
+         src="photo_2026-08-27_21-28-40.jpg"
+         alt="Rupesh Dubey">
+
+    <img class="gallery-item"
+         src="photo_2026-08-27_21-28-42.jpg"
+         alt="Rupesh Dubey">
+
+    <img class="gallery-item"
+         src="photo_2026-08-27_21-28-45.jpg"
+         alt="Rupesh Dubey">
+
+    <img class="gallery-item"
+         src="photo_2026-08-27_21-28-46.jpg"
+         alt="Rupesh Dubey">
+
+    <img class="gallery-item"
+         src="photo_2026-08-27_21-28-48.jpg"
+         alt="Rupesh Dubey">
+
+    <img class="gallery-item"
+         src="photo_2026-08-27_21-28-50.jpg"
+         alt="Rupesh Dubey">
+
+    <img class="gallery-item"
+         src="photo_2026-08-27_21-28-51.jpg"
+         alt="Rupesh Dubey">
+
+    <img class="gallery-item"
+         src="photo_2026-08-27_21-28-52.jpg"
+         alt="Rupesh Dubey">
+
+    <img class="gallery-item"
+         src="photo_2026-08-27_21-28-54.jpg"
+         alt="Rupesh Dubey">
+
+    <img class="gallery-item"
+         src="photo_2026-08-27_21-28-58.jpg"
+         alt="Rupesh Dubey">
+
+  </div>
+
+  <!-- Full Screen Photo Viewer -->
+  <div id="photoViewer">
+    <span id="closePhoto">&times;</span>
+    <img id="fullPhoto" src="" alt="Rupesh Dubey">
+  </div>
+
+  <script>
+    const galleryImages = document.querySelectorAll("#gallery .gallery-item");
+    const photoViewer = document.getElementById("photoViewer");
+    const fullPhoto = document.getElementById("fullPhoto");
+    const closePhoto = document.getElementById("closePhoto");
+
+    galleryImages.forEach(function(image) {
+      image.addEventListener("click", function() {
+        fullPhoto.src = image.src;
+        photoViewer.style.display = "flex";
+      });
+    });
+
+    closePhoto.addEventListener("click", function() {
+      photoViewer.style.display = "none";
+      fullPhoto.src = "";
+    });
+
+    photoViewer.addEventListener("click", function(e) {
+      if (e.target === photoViewer) {
+        photoViewer.style.display = "none";
+        fullPhoto.src = "";
+      }
+    });
+  </script>
+
+</section>#photoViewer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0,0,0,0.92);
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+}
+
+#fullPhoto {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+}</style>
 <section id="contact">
 <h2 class="heading">Let's <span>Connect</span></h2>
 <div class="card">
