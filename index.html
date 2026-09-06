@@ -7,9 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Rupesh Dubey | Personal Website</title>
+<title>Rupesh Dubey | Manufacturing Associate & Electrical Engineer</title>
 
-<meta name="description" content="Official personal website of Rupesh Dubey - Manufacturing Associate, Electrical Engineer and professional portfolio.">
+<meta name="description" content="Official personal website of Rupesh Dubey — Manufacturing Associate, Electrical Engineer and professional portfolio.">
+<meta name="keywords" content="Rupesh Dubey, Manufacturing Associate, Electrical Engineer, Micron Semiconductor, Tata EV, Wafer Saw, Die Attach, Wire Bonding">
+<meta name="author" content="Rupesh Dubey">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#050b16">
+
+<link rel="canonical" href="https://rupesh720.github.io/">
+
+<!-- Open Graph / Social Sharing -->
+<meta property="og:title" content="Rupesh Dubey | Personal Website">
+<meta property="og:description" content="Personal website and professional portfolio of Rupesh Dubey — Manufacturing Associate and Electrical Engineer.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://rupesh720.github.io/">
+<meta property="og:image" content="https://rupesh720.github.io/profile.jpg">
 
 <style>
 
@@ -32,6 +45,10 @@
     --border:rgba(255,255,255,0.10);
 }
 
+html{
+    scroll-padding-top:20px;
+}
+
 body{
     font-family:Arial,Helvetica,sans-serif;
     background:
@@ -41,6 +58,32 @@ body{
     color:var(--text);
     line-height:1.6;
     overflow-x:hidden;
+}
+
+/* ANIMATED BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    background:rgba(32,212,255,.06);
+    filter:blur(90px);
+    top:15%;
+    right:5%;
+    pointer-events:none;
+    z-index:-1;
+    animation:backgroundFloat 8s ease-in-out infinite alternate;
+}
+
+@keyframes backgroundFloat{
+    from{
+        transform:translate(0,0) scale(1);
+    }
+    to{
+        transform:translate(-60px,50px) scale(1.15);
+    }
 }
 
 /* SIDEBAR */
@@ -122,8 +165,22 @@ body{
     color:var(--muted);
     padding:12px 15px;
     border-radius:10px;
-    transition:.3s;
+    transition:.3s ease;
     font-size:15px;
+    position:relative;
+    overflow:hidden;
+}
+
+.nav a::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:3px;
+    height:100%;
+    background:var(--accent);
+    transform:scaleY(0);
+    transition:.3s;
 }
 
 .nav a:hover{
@@ -134,6 +191,10 @@ body{
         transparent
     );
     transform:translateX(5px);
+}
+
+.nav a:hover::before{
+    transform:scaleY(1);
 }
 
 /* SOCIAL */
@@ -166,13 +227,13 @@ body{
     color:white;
     text-decoration:none;
     font-weight:bold;
-    transition:.3s;
+    transition:.3s ease;
 }
 
 .social-links a:hover{
     background:var(--accent);
     color:#00111c;
-    transform:translateY(-4px);
+    transform:translateY(-4px) scale(1.08);
     box-shadow:0 0 18px rgba(32,212,255,.5);
 }
 
@@ -209,8 +270,30 @@ section{
     position:relative;
 }
 
+.hero::after{
+    content:"";
+    position:absolute;
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    border:1px solid rgba(32,212,255,.08);
+    right:8%;
+    top:25%;
+    animation:heroRing 6s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes heroRing{
+    from{
+        transform:rotate(0deg) scale(1);
+    }
+    to{
+        transform:rotate(360deg) scale(1.15);
+    }
+}
+
 .hero-content{
-    animation:fadeUp 1s ease;
+    animation:fadeUp 1s ease both;
 }
 
 @keyframes fadeUp{
@@ -272,7 +355,25 @@ section{
     font-weight:bold;
     border:1px solid var(--accent);
     color:var(--accent);
-    transition:.3s;
+    transition:.3s ease;
+    position:relative;
+    overflow:hidden;
+}
+
+.btn::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+    width:60%;
+    height:100%;
+    background:rgba(255,255,255,.18);
+    transform:skewX(-20deg);
+    transition:.5s;
+}
+
+.btn:hover::after{
+    left:130%;
 }
 
 .btn:hover{
@@ -300,7 +401,7 @@ section{
     padding:28px;
     margin-bottom:20px;
     box-shadow:0 15px 35px rgba(0,0,0,.2);
-    transition:.35s;
+    transition:.35s ease;
 }
 
 .card:hover{
@@ -340,6 +441,16 @@ section{
     border-radius:50%;
     background:var(--accent);
     box-shadow:0 0 18px rgba(32,212,255,.8);
+    animation:timelinePulse 2s infinite;
+}
+
+@keyframes timelinePulse{
+    0%,100%{
+        box-shadow:0 0 10px rgba(32,212,255,.5);
+    }
+    50%{
+        box-shadow:0 0 25px rgba(32,212,255,1);
+    }
 }
 
 .timeline-item h3{
@@ -365,7 +476,7 @@ section{
     padding:18px;
     text-align:center;
     color:#dce8f5;
-    transition:.3s;
+    transition:.3s ease;
 }
 
 .skill:hover{
@@ -398,7 +509,7 @@ section{
     border-radius:15px;
     cursor:pointer;
     border:2px solid rgba(32,212,255,.25);
-    transition:.35s;
+    transition:.35s ease;
     box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
 
@@ -419,6 +530,7 @@ section{
     align-items:center;
     justify-content:center;
     padding:30px;
+    backdrop-filter:blur(8px);
 }
 
 #fullPhoto{
@@ -427,6 +539,18 @@ section{
     object-fit:contain;
     border-radius:12px;
     box-shadow:0 0 40px rgba(255,255,255,.12);
+    animation:photoZoom .3s ease;
+}
+
+@keyframes photoZoom{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
 }
 
 #closePhoto{
@@ -469,6 +593,47 @@ footer{
     font-size:14px;
 }
 
+/* SCROLL REVEAL */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.reveal.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* TABLET */
+
+@media(max-width:1100px){
+
+    .sidebar{
+        width:235px;
+        padding:25px 17px;
+    }
+
+    main{
+        margin-left:235px;
+    }
+
+    footer{
+        margin-left:235px;
+    }
+
+    .hero h2{
+        font-size:50px;
+    }
+
+    .gallery-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
 /* MOBILE */
 
 @media(max-width:900px){
@@ -477,6 +642,7 @@ footer{
         position:relative;
         width:100%;
         height:auto;
+        min-height:auto;
         padding:25px 18px;
     }
 
@@ -484,10 +650,16 @@ footer{
         margin-bottom:20px;
     }
 
+    .profile-img{
+        width:105px;
+        height:105px;
+    }
+
     .nav{
         flex-direction:row;
         flex-wrap:wrap;
         justify-content:center;
+        gap:6px;
     }
 
     .nav a{
@@ -515,6 +687,13 @@ footer{
         min-height:80vh;
     }
 
+    .hero::after{
+        width:150px;
+        height:150px;
+        right:-30px;
+        top:20%;
+    }
+
     .hero h2{
         font-size:45px;
     }
@@ -532,7 +711,30 @@ footer{
     }
 }
 
+/* SMALL MOBILE */
+
 @media(max-width:520px){
+
+    .sidebar{
+        padding:22px 12px;
+    }
+
+    .profile h1{
+        font-size:21px;
+    }
+
+    .nav a{
+        padding:8px 10px;
+        font-size:12px;
+    }
+
+    section{
+        padding:55px 5%;
+    }
+
+    .hero{
+        min-height:75vh;
+    }
 
     .hero h2{
         font-size:36px;
@@ -546,8 +748,32 @@ footer{
         font-size:15px;
     }
 
+    .small-title{
+        font-size:11px;
+        letter-spacing:2px;
+    }
+
     .heading{
         font-size:29px;
+    }
+
+    .card{
+        padding:21px;
+        border-radius:14px;
+    }
+
+    .timeline{
+        padding-left:22px;
+    }
+
+    .timeline-item::before{
+        left:-31px;
+        width:12px;
+        height:12px;
+    }
+
+    .timeline-item h3{
+        font-size:18px;
     }
 
     .gallery-grid{
@@ -569,6 +795,46 @@ footer{
 
     .btn{
         text-align:center;
+        width:100%;
+    }
+
+    #photoViewer{
+        padding:15px;
+    }
+
+    #fullPhoto{
+        max-width:96%;
+        max-height:80vh;
+    }
+
+    #closePhoto{
+        top:15px;
+        right:20px;
+        font-size:36px;
+    }
+
+    footer{
+        padding:22px 15px;
+        font-size:12px;
+    }
+}
+
+/* REDUCE ANIMATION FOR USERS WHO PREFER LESS MOTION */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        scroll-behavior:auto !important;
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+
+    .reveal{
+        opacity:1;
+        transform:none;
     }
 }
 
@@ -585,8 +851,9 @@ footer{
 
         <img
             src="profile.jpg"
-            alt="Rupesh Dubey"
+            alt="Rupesh Dubey profile photo"
             class="profile-img"
+            loading="eager"
         >
 
         <h1>Rupesh <span>Dubey</span></h1>
@@ -595,7 +862,7 @@ footer{
 
     </div>
 
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
 
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -613,11 +880,29 @@ footer{
 
         <div class="social-links">
 
-            <a href="https://www.instagram.com/rupesh_dubey.72" target="_blank">IG</a>
+            <a
+                href="https://www.instagram.com/rupesh_dubey.72"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram">
+                IG
+            </a>
 
-            <a href="https://youtube.com/@dubeyblogs72" target="_blank">YT</a>
+            <a
+                href="https://youtube.com/@dubeyblogs72"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube">
+                YT
+            </a>
 
-            <a href="https://www.linkedin.com/in/rupesh-dubey-776859264" target="_blank">in</a>
+            <a
+                href="https://www.linkedin.com/in/rupesh-dubey-776859264"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn">
+                in
+            </a>
 
         </div>
 
@@ -671,7 +956,7 @@ footer{
 
 <!-- ABOUT -->
 
-<section id="about">
+<section id="about" class="reveal">
 
     <div class="container">
 
@@ -704,7 +989,7 @@ footer{
 
 <!-- CAREER -->
 
-<section id="career">
+<section id="career" class="reveal">
 
     <div class="container">
 
@@ -760,7 +1045,7 @@ footer{
 
 <!-- SKILLS -->
 
-<section id="skills">
+<section id="skills" class="reveal">
 
     <div class="container">
 
@@ -795,7 +1080,7 @@ footer{
 
 <!-- EDUCATION -->
 
-<section id="education">
+<section id="education" class="reveal">
 
     <div class="container">
 
@@ -850,7 +1135,7 @@ footer{
 
 <!-- GALLERY -->
 
-<section id="gallery">
+<section id="gallery" class="reveal">
 
     <div class="container">
 
@@ -862,47 +1147,58 @@ footer{
 
             <img class="gallery-item"
                  src="photo_2026-08-27_21-28-35.jpg"
-                 alt="Rupesh Dubey">
+                 alt="Rupesh Dubey gallery photo"
+                 loading="lazy">
 
             <img class="gallery-item"
                  src="photo_2026-08-27_21-28-40.jpg"
-                 alt="Rupesh Dubey">
+                 alt="Rupesh Dubey gallery photo"
+                 loading="lazy">
 
             <img class="gallery-item"
                  src="photo_2026-08-27_21-28-42.jpg"
-                 alt="Rupesh Dubey">
+                 alt="Rupesh Dubey gallery photo"
+                 loading="lazy">
 
             <img class="gallery-item"
                  src="photo_2026-08-27_21-28-45.jpg"
-                 alt="Rupesh Dubey">
+                 alt="Rupesh Dubey gallery photo"
+                 loading="lazy">
 
             <img class="gallery-item"
                  src="photo_2026-08-27_21-28-46.jpg"
-                 alt="Rupesh Dubey">
+                 alt="Rupesh Dubey gallery photo"
+                 loading="lazy">
 
             <img class="gallery-item"
                  src="photo_2026-08-27_21-28-48.jpg"
-                 alt="Rupesh Dubey">
+                 alt="Rupesh Dubey gallery photo"
+                 loading="lazy">
 
             <img class="gallery-item"
                  src="photo_2026-08-27_21-28-50.jpg"
-                 alt="Rupesh Dubey">
+                 alt="Rupesh Dubey gallery photo"
+                 loading="lazy">
 
             <img class="gallery-item"
                  src="photo_2026-08-27_21-28-51.jpg"
-                 alt="Rupesh Dubey">
+                 alt="Rupesh Dubey gallery photo"
+                 loading="lazy">
 
             <img class="gallery-item"
                  src="photo_2026-08-27_21-28-52.jpg"
-                 alt="Rupesh Dubey">
+                 alt="Rupesh Dubey gallery photo"
+                 loading="lazy">
 
             <img class="gallery-item"
                  src="photo_2026-08-27_21-28-54.jpg"
-                 alt="Rupesh Dubey">
+                 alt="Rupesh Dubey gallery photo"
+                 loading="lazy">
 
             <img class="gallery-item"
                  src="photo_2026-08-27_21-28-58.jpg"
-                 alt="Rupesh Dubey">
+                 alt="Rupesh Dubey gallery photo"
+                 loading="lazy">
 
         </div>
 
@@ -913,18 +1209,20 @@ footer{
 
 <!-- PHOTO VIEWER -->
 
-<div id="photoViewer">
+<div id="photoViewer" role="dialog" aria-modal="true" aria-label="Photo viewer">
 
-    <span id="closePhoto">&times;</span>
+    <span id="closePhoto" role="button" tabindex="0" aria-label="Close photo viewer">
+        &times;
+    </span>
 
-    <img id="fullPhoto" src="" alt="Full Photo">
+    <img id="fullPhoto" src="" alt="Full size Rupesh Dubey photo">
 
 </div>
 
 
 <!-- CONTACT -->
 
-<section id="contact">
+<section id="contact" class="reveal">
 
     <div class="container">
 
@@ -942,28 +1240,34 @@ footer{
 
             <div class="contact-links">
 
-                <a class="btn"
-                   href="https://www.instagram.com/rupesh_dubey.72"
-                   target="_blank">
+                <a
+                    class="btn"
+                    href="https://www.instagram.com/rupesh_dubey.72"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     Instagram
                 </a>
 
-                <a class="btn primary"
-                   href="https://youtube.com/@dubeyblogs72"
-                   target="_blank">
+                <a
+                    class="btn primary"
+                    href="https://youtube.com/@dubeyblogs72"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     YouTube
                 </a>
 
-                <a class="btn"
-                   href="https://www.linkedin.com/in/rupesh-dubey-776859264"
-                   target="_blank">
+                <a
+                    class="btn"
+                    href="https://www.linkedin.com/in/rupesh-dubey-776859264"
+                    target="_blank"
+                    rel="noopener noreferrer">
                     LinkedIn
                 </a>
 
-               <a class="btn"
-   href="mailto:Rupeshdubey7300@gmail.com">
-    Email Me
-</a>
+                <a
+                    class="btn"
+                    href="mailto:Rupeshdubey7300@gmail.com">
+                    Email Me
                 </a>
 
             </div>
@@ -984,6 +1288,8 @@ footer{
 
 <script>
 
+/* GALLERY PHOTO VIEWER */
+
 const galleryImages =
 document.querySelectorAll(".gallery-item");
 
@@ -997,6 +1303,15 @@ const closePhoto =
 document.getElementById("closePhoto");
 
 
+function closeViewer(){
+
+    photoViewer.style.display = "none";
+    fullPhoto.src = "";
+    document.body.style.overflow = "";
+
+}
+
+
 galleryImages.forEach(function(image){
 
     image.addEventListener("click",function(){
@@ -1005,29 +1320,82 @@ galleryImages.forEach(function(image){
 
         photoViewer.style.display = "flex";
 
+        document.body.style.overflow = "hidden";
+
     });
 
 });
 
 
-closePhoto.addEventListener("click",function(){
-
-    photoViewer.style.display = "none";
-
-    fullPhoto.src = "";
-
-});
+closePhoto.addEventListener("click",closeViewer);
 
 
 photoViewer.addEventListener("click",function(e){
 
     if(e.target === photoViewer){
+        closeViewer();
+    }
 
-        photoViewer.style.display = "none";
+});
 
-        fullPhoto.src = "";
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key === "Escape" &&
+       photoViewer.style.display === "flex"){
+
+        closeViewer();
 
     }
+
+});
+
+
+closePhoto.addEventListener("keydown",function(e){
+
+    if(e.key === "Enter" || e.key === " "){
+
+        closeViewer();
+
+    }
+
+});
+
+
+/* SCROLL REVEAL ANIMATION */
+
+const revealElements =
+document.querySelectorAll(".reveal");
+
+const revealObserver =
+new IntersectionObserver(
+
+    function(entries){
+
+        entries.forEach(function(entry){
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("show");
+
+                revealObserver.unobserve(entry.target);
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:0.12
+    }
+
+);
+
+
+revealElements.forEach(function(element){
+
+    revealObserver.observe(element);
 
 });
 
